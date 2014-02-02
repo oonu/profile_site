@@ -51,3 +51,5 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'spring'
 end
+
+gem 'devise'
