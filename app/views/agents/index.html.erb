@@ -6,7 +6,8 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:last_name) %></th>
+      <th><%= model_class.human_attribute_name(:first_name) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -15,7 +16,8 @@
     <% @agents.each do |agent| %>
       <tr>
         <td><%= link_to agent.id, agent_path(agent) %></td>
-        <td><%= agent.name %></td>
+        <td><%= agent.last_name %></td>
+        <td><%= agent.first_name %></td>
         <td><%=l agent.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

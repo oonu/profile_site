@@ -70,6 +70,6 @@ class AgentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def agent_params
-      params.require(:agent).permit(:name)
+      params.require(:agent).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :sex, :age, :home_city, :location, :appeal, :point)
     end
 end

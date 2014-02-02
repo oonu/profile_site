@@ -1,8 +1,52 @@
 <%= form_for @agent, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
+    <%= f.label :name, '名前', :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
+      <%= f.text_field :last_name, :class => 'text_field' %>
+      <%= f.text_field :first_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, 'ひらがな', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :last_name_kana, :class => 'text_field' %>
+      <%= f.text_field :first_name_kana, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, '性別', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :sex, [['男', 0], ['女', 1]], :prompt => '選択してください' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, '年齢', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :age, :size => 2, :maxlength => 2 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, '出身地', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :home_city, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, '所在地', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :location, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, 'アピール', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :appeal, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, 'ポイント', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :point, :size => 5, :maxlength => 5 %>
     </div>
   </div>
 

@@ -9,10 +9,11 @@
           <div class="thumbnail">
             <a href="#" class="thumbnails">
               <%= image_tag("default_image.png") %><br>
+              <div class="caption">
+                <%= agent.last_name %>&nbsp;&nbsp;
+                <%= agent.first_name %>
+              </div>
             </a>
-            <div class="caption">
-              <%= agent.name %>
-            </div>
           </div>
         </li>
       <% end %>
