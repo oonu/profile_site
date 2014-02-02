@@ -32,7 +32,18 @@ ActiveRecord::Schema.define(version: 20140202111349) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "agents", force: true do |t|
-    t.string   "name"
+    t.string   "last_name",                          null: false
+    t.string   "last_name_kana",                     null: false
+    t.string   "first_name",                         null: false
+    t.string   "first_name_kana",                    null: false
+    t.integer  "sex"
+    t.integer  "age"
+    t.string   "home_city"
+    t.string   "location"
+    t.string   "appeal"
+    t.integer  "point"
+    t.binary   "icon",              limit: 16777215
+    t.string   "icon_content_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
