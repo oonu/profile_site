@@ -1,6 +1,7 @@
 ProfileSite::Application.routes.draw do
-  root "top#index"
-  get "top/index"
+  root  "top#index"
+  get   "top/index"
+  get   "top/show/:id" => "top#show"
   resources :agents
 
   devise_for :admins

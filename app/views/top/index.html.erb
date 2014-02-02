@@ -7,7 +7,7 @@
       <% @agents.each do |agent| %>
         <li class="span4">
           <div class="thumbnail">
-            <a href="#" class="thumbnails">
+            <a href="/top/show/<%= agent.id %>" class="thumbnails">
               <%= image_tag("default_image.png") %><br>
               <div class="caption">
                 <%= agent.last_name %>&nbsp;&nbsp;
