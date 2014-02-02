@@ -1,3 +1,21 @@
 <div class="hero-unit">
   <h1>公開エージェント情報</h1>
 </div>
+<div>
+  <div class="row-fluid">
+    <ul class="thumbnails">
+      <% @agents.each do |agent| %>
+        <li class="span4">
+          <div class="thumbnail">
+            <a href="#" class="thumbnails">
+              <%= image_tag("default_image.png") %><br>
+            </a>
+            <div class="caption">
+              <%= agent.name %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </div>
+  </div>
+</div>
