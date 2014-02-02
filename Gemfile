@@ -50,3 +50,9 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'spring'
 end
+
+group :assets do
+  gem 'twitter-bootswatch-rails'
+end
+
+gem 'twitter-bootswatch-rails-helpers'
