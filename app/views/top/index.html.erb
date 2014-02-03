@@ -1,22 +1,94 @@
-<div class="hero-unit">
-  <h1>公開エージェント情報</h1>
+
+<div class="page-header" id="banner">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1>公開エージェント情報</h1>
+      <p class="lead">本サイトの紹介文</p>
+    </div>
+    <div class="col-lg-6" style="padding: 15px 15px 0 15px;">
+      <div class="well">
+        <a href="http://teamtreehouse.com/join/first-week-free?utm_source=bootswatch&utm_content=ap-grid-bootswatch&cid=1432" rel="nofollow" target="_blank">
+          <span style="float: left; margin-right: 15px;">
+            <img src="../assets/img/treehouse.jpg" width="175" height="135" style="border: 1px solid #ccc; border-radius: 4px;">
+          </span>
+          </a>
+          <a href="http://teamtreehouse.com/join/first-week-free?utm_source=bootswatch&utm_content=ap-grid-bootswatch&cid=1432" rel="nofollow" target="_blank">
+          <h4 style="margin-bottom: 0.4em;">Treehouse</h4>
+          <div class="clearfix">
+            <p>Learn Web Design, Coding, Mobile App Development &amp; More.</p>
+            <p>Start Learning for Free!</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
-<div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h2>公開エージェント情報</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">公開エージェント情報</h3>
+      </div>
+      <div class="panel-body">
+        <% while ! @agents.empty? do %>
+          <% row_agents = @agents.pop 3 %>
+          <div class="row">
+            <div class="col-lg-4">
+              <% if row_agents[0] %>
+                <div class="well">
+                  <% agent = row_agents[0] %>
+                  <a href="/top/show/<%= agent.id %>">
+                    <%= image_tag("default_image.png") %><br>
+                    <div class="caption">
+                      <%= agent.last_name %>&nbsp;&nbsp;
+                      <%= agent.first_name %>
+                    </div>
+                  </a>
+                </div>
+              <% end %>
+            </div>
+            <div class="col-lg-4">
+              <% if row_agents[1] %>
+                <div class="well">
+                  <% agent = row_agents[1] %>
+                  <a href="/top/show/<%= agent.id %>">
+                    <%= image_tag("default_image.png") %><br>
+                    <div class="caption">
+                      <%= agent.last_name %>&nbsp;&nbsp;
+                      <%= agent.first_name %>
+                    </div>
+                  </a>
+                </div>
+              <% end %>
+            </div>
+            <div class="col-lg-4">
+              <% if row_agents[2] %>
+                <div class="well">
+                  <% agent = row_agents[2] %>
+                  <a href="/top/show/<%= agent.id %>">
+                    <%= image_tag("default_image.png") %><br>
+                    <div class="caption">
+                      <%= agent.last_name %>&nbsp;&nbsp;
+                      <%= agent.first_name %>
+                    </div>
+                  </a>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
   <div class="row-fluid">
     <ul class="thumbnails">
-      <% @agents.each do |agent| %>
-        <li class="span4">
-          <div class="thumbnail">
-            <a href="/top/show/<%= agent.id %>" class="thumbnails">
-              <%= image_tag("default_image.png") %><br>
-              <div class="caption">
-                <%= agent.last_name %>&nbsp;&nbsp;
-                <%= agent.first_name %>
-              </div>
-            </a>
-          </div>
-        </li>
-      <% end %>
     </div>
   </div>
 </div>
