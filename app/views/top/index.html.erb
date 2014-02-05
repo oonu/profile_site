@@ -23,7 +23,7 @@
                 <div class="well">
                   <% agent = row_agents[0] %>
                   <a href="/top/show/<%= agent.id %>">
-                    <%= image_tag("default_image.png") %><br>
+                    <%= image_tag("default_image.png", :class => 'img-thumbnail') %><br>
                     <strong><%= agent.appeal %></strong>
                     <div class="caption">
                       <%= agent.last_name %>&nbsp;&nbsp;
@@ -38,7 +38,7 @@
                 <div class="well">
                   <% agent = row_agents[1] %>
                   <a href="/top/show/<%= agent.id %>">
-                    <%= image_tag("default_image.png") %><br>
+                    <%= image_tag("default_image.png", :class => 'img-thumbnail') %><br>
                     <strong><%= agent.appeal %></strong>
                     <div class="caption">
                       <%= agent.last_name %>&nbsp;&nbsp;
@@ -53,7 +53,7 @@
                 <div class="well">
                   <% agent = row_agents[2] %>
                   <a href="/top/show/<%= agent.id %>">
-                    <%= image_tag("default_image.png") %><br>
+                    <%= image_tag("default_image.png", :class => 'img-thumbnail') %><br>
                     <strong><%= agent.appeal %></strong> <div class="caption"> <%= agent.last_name %>&nbsp;&nbsp;
                       <%= agent.first_name %>
                     </div>
