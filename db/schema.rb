@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140202111349) do
+ActiveRecord::Schema.define(version: 20140206150944) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -36,14 +36,29 @@ ActiveRecord::Schema.define(version: 20140202111349) do
     t.string   "last_name_kana",                     null: false
     t.string   "first_name",                         null: false
     t.string   "first_name_kana",                    null: false
+    t.date     "birth_day"
     t.integer  "sex"
     t.integer  "age"
     t.string   "home_city"
     t.string   "location"
+    t.string   "hobby"
+    t.string   "ability"
+    t.string   "free_word"
     t.string   "appeal"
-    t.integer  "point"
     t.binary   "icon",              limit: 16777215
     t.string   "icon_content_type"
+    t.string   "email"
+    t.integer  "point"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "agents", ["email"], name: "index_agents_on_email", unique: true, using: :btree
+
+  create_table "businesses", force: true do |t|
+    t.string   "outline"
+    t.string   "company_name"
+    t.string   "company_position"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

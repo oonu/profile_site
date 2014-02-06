@@ -42,5 +42,6 @@ class CreateAgents < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :agents, :email, :unique => true
   end
 end
