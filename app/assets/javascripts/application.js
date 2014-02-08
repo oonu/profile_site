@@ -15,4 +15,6 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require flatly/loader
+//= require jquery.lazyload
+//= require jquery.set.lazyload
 

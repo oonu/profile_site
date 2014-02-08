@@ -24,9 +24,9 @@
                   <% agent = row_agents[0] %>
                   <a href="/top/show/<%= agent.id %>">
                     <% if agent.icon %>
-                      <%= image_tag(icon_agent_path(agent), :class => 'img-thumbnail') %><br>
+                      <%= lazy_image_tag(icon_agent_path(agent), :class => 'img-thumbnail') %><br>
                     <% else %>
-                      <%= image_tag("default_image.png", :class => 'img-thumbnail') %><br>
+                      <%= lazy_image_tag("/assets/default_image.png", :class => 'img-thumbnail') %><br>
                     <% end %>
                     <strong><%= agent.appeal %></strong>
                     <div class="caption">
@@ -43,9 +43,9 @@
                   <% agent = row_agents[1] %>
                   <a href="/top/show/<%= agent.id %>">
                     <% if agent.icon %>
-                      <%= image_tag(icon_agent_path(agent), :class => 'img-thumbnail') %><br>
+                      <%= lazy_image_tag(icon_agent_path(agent), :class => 'img-thumbnail') %><br>
                     <% else %>
-                      <%= image_tag("default_image.png", :class => 'img-thumbnail') %><br>
+                      <%= lazy_image_tag("/assets/default_image.png", :class => 'img-thumbnail') %><br>
                     <% end %>
                     <strong><%= agent.appeal %></strong>
                     <div class="caption">
@@ -62,9 +62,9 @@
                   <% agent = row_agents[2] %>
                   <a href="/top/show/<%= agent.id %>">
                     <% if agent.icon %>
-                      <%= image_tag(icon_agent_path(agent), :class => 'img-thumbnail') %><br>
+                      <%= lazy_image_tag(icon_agent_path(agent), :class => 'img-thumbnail') %><br>
                     <% else %>
-                      <%= image_tag("default_image.png", :class => 'img-thumbnail') %><br>
+                      <%= lazy_image_tag("/assets/default_image.png", :class => 'img-thumbnail') %><br>
                     <% end %>
                     <strong><%= agent.appeal %></strong> <div class="caption"> <%= agent.last_name %>&nbsp;&nbsp;
                       <%= agent.first_name %>
