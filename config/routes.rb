@@ -4,9 +4,7 @@ ProfileSite::Application.routes.draw do
   root  "top#index"
   get   "top/index"
   get   "top/show/:id" => "top#show"
-  resources :agents do
-    member { get :icon }
-  end
+  get   "top/icon/:id" => "top#icon"
 
   devise_for :admins
   # The priority is based upon order of creation: first created -> highest priority.

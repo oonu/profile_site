@@ -65,10 +65,6 @@ class AgentsController < ApplicationController
     end
   end
 
-  def icon
-    send_data(@agent.icon, type: @agent.icon_content_type, disposition: :inline)
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_agent

@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-lg-3">
             <% if @agent.icon %>
-              <%= image_tag(icon_agent_path(@agent), :class => 'img-thumbnail') %><br>
+              <%= image_tag("/top/icon/#{@agent.id}", :class => 'img-thumbnail') %><br>
             <% else %>
               <%= image_tag("/assets/default_image.png", :class => 'img-thumbnail') %><br>
             <% end %>
