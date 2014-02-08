@@ -1,6 +1,6 @@
 class AgentsController < ApplicationController
   before_action :authenticate_admin!
-  before_action :set_agent, only: [:show, :edit, :update, :destroy]
+  before_action :set_agent, only: [:show, :edit, :update, :destroy, :icon]
 
   # GET /agents
   # GET /agents.json
@@ -26,6 +26,8 @@ class AgentsController < ApplicationController
   # POST /agents.json
   def create
     @agent = Agent.new(agent_params)
+    @agent.icon = params[:agent][:icon].read # <= バイナリをセット
+    @agent.icon_content_type = params[:agent][:icon].content_type # <= ファイルタイプをセット
 
     respond_to do |format|
       if @agent.save
@@ -62,6 +64,10 @@ class AgentsController < ApplicationController
     end
   end
 
+  def icon
+    send_data(@agent.icon, type: @agent.icon_content_type, disposition: :inline)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_agent
@@ -70,6 +76,6 @@ class AgentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def agent_params
-      params.require(:agent).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :sex, :age, :home_city, :location, :appeal, :point)
+      params.require(:agent).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :sex, :age, :home_city, :location, :appeal, :point, :icon, :icon_content_type)
     end
 end
