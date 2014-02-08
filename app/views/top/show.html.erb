@@ -10,7 +10,11 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-lg-3">
-            <%= image_tag("default_image.png", :class => 'img-thumbnail') %>
+            <% if @agent.icon %>
+              <%= image_tag(icon_agent_path(@agent), :class => 'img-thumbnail') %><br>
+            <% else %>
+              <%= image_tag("default_image.png", :class => 'img-thumbnail') %><br>
+            <% end %>
           </div>
           <div class="col-lg-5">
             氏名:

@@ -1,5 +1,11 @@
 <%= form_for @agent, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
+    <%= f.label :icon, '顔写真', :class => 'control-label' %>
+    <div class="controls">
+      <%= f.file_field :icon %>
+    </div>
+  </div>
+  <div class="control-group">
     <%= f.label :name, '名前', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :last_name, :class => 'text_field' %>
