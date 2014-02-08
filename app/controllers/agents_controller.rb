@@ -26,9 +26,10 @@ class AgentsController < ApplicationController
   # POST /agents.json
   def create
     @agent = Agent.new(agent_params)
-    @agent.icon = params[:agent][:icon].read # <= バイナリをセット
-    @agent.icon_content_type = params[:agent][:icon].content_type # <= ファイルタイプをセット
-
+    if params[:agent][:icon]
+      @agent.icon = params[:agent][:icon].read # <= バイナリをセット
+      @agent.icon_content_type = params[:agent][:icon].content_type # <= ファイルタイプをセット
+    end
     respond_to do |format|
       if @agent.save
         format.html { redirect_to @agent, notice: 'Agent was successfully created.' }
