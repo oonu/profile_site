@@ -1,5 +1,6 @@
 ProfileSite::Application.routes.draw do
   resources :businesses
+  resources :agents
 
   root  "top#index"
   get   "top/index"

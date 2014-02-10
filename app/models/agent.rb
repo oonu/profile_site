@@ -1,5 +1,6 @@
 class Agent < ActiveRecord::Base
   has_many :businesses
+  accepts_nested_attributes_for :businesses
 
   def update(params)
     if params[:icon]

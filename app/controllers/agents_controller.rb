@@ -1,5 +1,5 @@
 class AgentsController < ApplicationController
-  before_action :authenticate_admin!
+  #before_action :authenticate_admin!
   before_action :set_agent, only: [:show, :edit, :update, :destroy, :icon]
 
   # GET /agents
@@ -73,6 +73,32 @@ class AgentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def agent_params
-      params.require(:agent).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :sex, :age, :home_city, :location, :appeal, :point, :icon, :icon_content_type)
+      params.require(:agent).permit(
+        :last_name, 
+        :first_name, 
+        :last_name_kana, 
+        :first_name_kana, 
+        :nick_name,
+        :sex,
+        :birth_day,
+        :age,
+        :home_city,
+        :location,
+        :hobby,
+        :ability,
+        :free_word,
+        :ambition,
+        :appeal,
+        :point,
+        :icon,
+        :icon_content_type,
+        :business_attributes => [
+          :id,
+          :outline,
+          :company_name,
+          :company_position,
+          :_destroy
+        ]
+      )
     end
 end

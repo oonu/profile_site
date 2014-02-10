@@ -33,9 +33,10 @@ ActiveRecord::Schema.define(version: 20140206150944) do
 
   create_table "agents", force: true do |t|
     t.string   "last_name",                          null: false
-    t.string   "last_name_kana",                     null: false
+    t.string   "last_name_kana"
     t.string   "first_name",                         null: false
-    t.string   "first_name_kana",                    null: false
+    t.string   "first_name_kana"
+    t.string   "nick_name"
     t.date     "birth_day"
     t.integer  "sex"
     t.integer  "age"
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 20140206150944) do
     t.string   "hobby"
     t.string   "ability"
     t.string   "free_word"
+    t.string   "ambition"
     t.string   "appeal"
     t.binary   "icon",              limit: 16777215
     t.string   "icon_content_type"
