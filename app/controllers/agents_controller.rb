@@ -92,7 +92,7 @@ class AgentsController < ApplicationController
         :point,
         :icon,
         :icon_content_type,
-        :business_attributes => [
+        businesses_attributes: [
           :id,
           :outline,
           :company_name,

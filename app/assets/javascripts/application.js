@@ -17,4 +17,5 @@
 //= require flatly/loader
 //= require jquery.lazyload
 //= require jquery.set.lazyload
+//= require jquery_nested_form
 

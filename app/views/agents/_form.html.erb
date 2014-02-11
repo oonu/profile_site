@@ -1,4 +1,4 @@
-<%= form_for @agent, :html => { :class => 'form-horizontal' } do |f| %>
+<%= nested_form_for @agent, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%= f.label :icon, '顔写真', :class => 'control-label' %>
     <div class="controls">
@@ -75,7 +75,9 @@
       <div class="controls">
         <%= b_f.text_field :outline, :class => 'text_field' %>
       </div>
+      <%= b_f.link_to_remove "職業削除" %>
     <% end %>
+    <%= f.link_to_add "職業追加", :businesses %>
   </div>
   <div class="control-group">
     <%= f.label :name, '一言', :class => 'control-label' %>
