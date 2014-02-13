@@ -13,19 +13,7 @@
         <h3 class="panel-title">エージェント一覧</h3>
       </div>
       <div class="panel-body">
-        <% while ! @agents.empty? do %>
-          <div class="row">
-            <div class="col-lg-4">
-              <%= render(:partial => 'agent_summary', :object => @agents.pop) %>
-            </div>
-            <div class="col-lg-4">
-              <%= render(:partial => 'agent_summary', :object => @agents.pop) %>
-            </div>
-            <div class="col-lg-4">
-              <%= render(:partial => 'agent_summary', :object => @agents.pop) %>
-            </div>
-          </div>
-        <% end %>
+        <%= render(:partial => 'agent_summary', :collection => @agents) %>
       </div>
     </div>
   </div>
