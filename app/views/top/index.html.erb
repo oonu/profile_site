@@ -14,62 +14,15 @@
       </div>
       <div class="panel-body">
         <% while ! @agents.empty? do %>
-          <% row_agents = @agents.pop 3 %>
           <div class="row">
             <div class="col-lg-4">
-              <% if row_agents[0] %>
-                <div class="well">
-                  <% agent = row_agents[0] %>
-                  <a href="/top/show/<%= agent.id %>">
-                    <% if agent.icon %>
-                      <%= lazy_image_tag("/top/icon/#{agent.id}", :class => 'img-thumbnail') %><br>
-                    <% else %>
-                      <%= lazy_image_tag("/assets/default_image.png", :class => 'img-thumbnail') %><br>
-                    <% end %>
-                    <strong><%= agent.appeal %></strong>
-                    <div class="caption">
-                      <%= agent.last_name %>&nbsp;&nbsp;
-                      <%= agent.first_name %>
-                    </div>
-                  </a>
-                </div>
-              <% end %>
+              <%= render(:partial => 'agent_summary', :object => @agents.pop) %>
             </div>
             <div class="col-lg-4">
-              <% if row_agents[1] %>
-                <div class="well">
-                  <% agent = row_agents[1] %>
-                  <a href="/top/show/<%= agent.id %>">
-                    <% if agent.icon %>
-                      <%= lazy_image_tag("/top/icon/#{agent.id}", :class => 'img-thumbnail') %><br>
-                    <% else %>
-                      <%= lazy_image_tag("/assets/default_image.png", :class => 'img-thumbnail') %><br>
-                    <% end %>
-                    <strong><%= agent.appeal %></strong>
-                    <div class="caption">
-                      <%= agent.last_name %>&nbsp;&nbsp;
-                      <%= agent.first_name %>
-                    </div>
-                  </a>
-                </div>
-              <% end %>
+              <%= render(:partial => 'agent_summary', :object => @agents.pop) %>
             </div>
             <div class="col-lg-4">
-              <% if row_agents[2] %>
-                <div class="well">
-                  <% agent = row_agents[2] %>
-                  <a href="/top/show/<%= agent.id %>">
-                    <% if agent.icon %>
-                      <%= lazy_image_tag("/top/icon/#{agent.id}", :class => 'img-thumbnail') %><br>
-                    <% else %>
-                      <%= lazy_image_tag("/assets/default_image.png", :class => 'img-thumbnail') %><br>
-                    <% end %>
-                    <strong><%= agent.appeal %></strong> <div class="caption"> <%= agent.last_name %>&nbsp;&nbsp;
-                      <%= agent.first_name %>
-                    </div>
-                  </a>
-                </div>
-              <% end %>
+              <%= render(:partial => 'agent_summary', :object => @agents.pop) %>
             </div>
           </div>
         <% end %>

@@ -1,0 +1,19 @@
+<% if agent_summary %>
+  <div class="well">
+    <%= link_to "/top/show/#{agent_summary.id}" do %>
+      <% if agent_summary.icon %>
+        <%= lazy_image_tag("/top/icon/#{agent_summary.id}",
+                           :class => 'img-thumbnail') %>
+      <% else %>
+        <%= lazy_image_tag("/assets/default_image.png",
+                           :class => 'img-thumbnail') %>
+      <% end %>
+      <br>
+      <strong><%= agent_summary.appeal %></strong>
+      <div class="caption">
+        <%= agent_summary.last_name %>&nbsp;&nbsp;
+        <%= agent_summary.first_name %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
