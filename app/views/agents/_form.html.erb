@@ -1,100 +1,156 @@
+<div class="well">
 <%= nested_form_for @agent, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :icon, '顔写真', :class => 'control-label' %>
-    <div class="controls">
+  <div class="form-group">
+    <%= f.label :icon_label, '顔写真', 
+                :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
       <%= f.file_field :icon %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :name, '名前', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :last_name, :class => 'text_field' %>
-      <%= f.text_field :first_name, :class => 'text_field' %>
+  <div class="form-group">
+    <%= f.label :name_label, '名前', 
+                :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-5">
+      <%= f.text_field :last_name, :class => 'form-control',
+                       :id => 'inputDefault' %>
+    </div>
+    <div class="col-lg-5">
+      <%= f.text_field :first_name, :class => 'form-control',
+                       :id => 'inputDefault' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :name, 'ひらがな', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :last_name_kana, :class => 'text_field' %>
-      <%= f.text_field :first_name_kana, :class => 'text_field' %>
+  <div class="form-group">
+    <%= f.label :kana_label, 'ひらがな', 
+                :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-5">
+      <%= f.text_field :last_name_kana, :class => 'form-control',
+                       :id => 'inputDefault' %>
+    </div>
+    <div class="col-lg-5">
+      <%= f.text_field :first_name_kana, :class => 'form-control',
+                       :id => 'inputDefault' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :name, 'ニックネーム', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :nick_name, :class => 'text_field' %>
+  <div class="form-group">
+    <%= f.label :nick_name_label, 'ニックネーム', 
+                :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.text_field :nick_name, :class => 'form-control', 
+                       :id => 'inputDefault' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :name, '性別', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select :sex, [['男', 0], ['女', 1], ['その他', 2]], :prompt => '選択してください' %>
+  <div class="form-group">
+    <%= f.label :email_label, 'Email', :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.text_field :email, :class => 'form-control', 
+                       :id => 'inputEmail', :placeholder => 'Email' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :name, '生年月日', :class => 'control-label' %>
-    <div class="controls">
+  <div class="form-group">
+    <%= f.label :sex_label, '性別', :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.select(:sex, 
+        [
+          ['男', 0], 
+          ['女', 1], 
+          ['その他', 2]
+        ], 
+        {:prompt => '選択してください'},
+        {:class => "form-control", :id => "select"}) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :birth_day_label, '生年月日', :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
       <%= f.date_select :birth_day, :use_month_numbers => true, :start_year => 1900 %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :name, '出身地', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :home_city, :class => 'text_field' %>
+  <div class="form-group">
+    <%= f.label :home_city_label, '出身地', :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.text_field :home_city, :class => 'form-control', 
+                       :id => 'inputDefault' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :name, '所在地', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :location, :class => 'text_field' %>
+  <div class="form-group">
+    <%= f.label :location_label, '所在地', :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.text_field :location, :class => 'form-control', 
+                       :id => 'inputDefault' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :name, '趣味', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :hobby, :class => 'text_field' %>
+  <div class="form-group">
+    <%= f.label :hobby_label, '趣味', :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.text_field :hobby, :class => 'form-control', 
+                       :id => 'inputDefault' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :name, '特技', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :ability, :class => 'text_field' %>
+  <div class="form-group">
+    <%= f.label :ability_label, '特技', :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.text_field :ability, :class => 'form-control', 
+                       :id => 'inputDefault' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.fields_for :businesses do |b_f| %>
-      <%= b_f.label :name, '会社名', :class => 'control-label' %>
-      <div class="controls">
-        <%= b_f.text_field :company_name, :class => 'text_field' %>
-      </div>
-      <%= b_f.label :name, '役職', :class => 'control-label' %>
-      <div class="controls">
-        <%= b_f.text_field :company_position, :class => 'text_field' %>
-      </div>
-      <%= b_f.label :name, '仕事内容', :class => 'control-label' %>
-      <div class="controls">
-        <%= b_f.text_field :outline, :class => 'text_field' %>
-      </div>
-      <%= b_f.link_to_remove "職業削除" %>
-    <% end %>
-    <%= f.link_to_add "職業追加", :businesses %>
-  </div>
-  <div class="control-group">
-    <%= f.label :name, '一言', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :free_word, :class => 'text_field' %>
+  <div class="form-group">
+    <%= f.label :ability_label, '職業', :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10"></div>
+    <div class="col-lg-12">
+      <%= f.fields_for :businesses do |b_f| %>
+        <div class="well">
+          <div class="form-group">
+            <%= f.label :company_name_label, '会社名', :class => 'col-lg-2 control-label' %>
+            <div class="col-lg-10">
+              <%= b_f.text_field :company_name, :class => 'form-control', 
+                                 :id => 'inputDefault' %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :company_position_label, '役職', :class => 'col-lg-2 control-label' %>
+            <div class="col-lg-10">
+              <%= b_f.text_field :company_position, :class => 'form-control', 
+                                 :id => 'inputDefault' %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :company_outline, '仕事内容', :class => 'col-lg-2 control-label' %>
+            <div class="col-lg-10">
+              <%= b_f.text_field :outline, :class => 'form-control', 
+                                 :id => 'inputDefault' %>
+            </div>
+          </div>
+          <%= b_f.link_to_remove "削除" %>
+        </div>
+      <% end %>
+    </div>
+    <br>
+    <div class="col-lg-2"></div>
+    <div class="col-lg-10">
+      <%= f.link_to_add "追加", :businesses %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :name, '抱負', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :ambition, :class => 'text_field' %>
+  <div class="form-group">
+    <%= f.label :free_word_label, '一言', :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.text_field :free_word, :class => 'form-control', 
+                       :id => 'inputDefault' %>
     </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                agents_path, :class => 'btn' %>
+  <div class="form-group">
+    <%= f.label :ambition_label, '抱負', :class => 'col-lg-2 control-label' %>
+    <div class="col-lg-10">
+      <%= f.text_field :ambition, :class => 'form-control', 
+                       :id => 'inputDefault' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  agents_path, :class => 'btn' %>
+    </div>
   </div>
 <% end %>
+</div>
