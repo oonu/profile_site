@@ -3,45 +3,76 @@
 
 <div class="row">
   <div class="col-lg-12">
+    <% if @agent.free_word %>
+      <div class="jumbotron">
+        <h2><%= @agent.free_word %></h2>
+      </div>
+    <% end %>
     <div class="panel panel-primary">
       <div class="panel-heading">
         <h3 class="panel-title">基本情報</h3>
       </div>
       <div class="panel-body">
         <div class="row">
-          <div class="col-lg-3">
+          <div class="col-xs-12 col-sm-6 col-md-6">
             <% if @agent.icon %>
               <%= image_tag("/top/icon/#{@agent.id}", :class => 'img-thumbnail') %><br>
             <% else %>
               <%= image_tag("/assets/default_image.png", :class => 'img-thumbnail') %><br>
             <% end %>
           </div>
-          <div class="col-lg-5">
-            氏名:
-            <%= @agent.last_name %>&nbsp;&nbsp;
-            <%= @agent.first_name %>
-            <br>
-            性別: <%= @agent.sex %><br>
-            年齢: <%= @agent.age %><br>
-            出身地: <%= @agent.home_city %><br>
-            所在地: <%= @agent.location %>
-          </div>
-          <div class="col-lg-4">
-            <div class="btn-group-vertical">
-              <button type="button" class="btn btn-default">アポイントのお願い</button>
-              <button type="button" class="btn btn-default">質問・ご相談</button>
-              <button type="button" class="btn btn-default">ご連絡</button>
-              <button type="button" class="btn btn-default">遊び・飲み会のお誘い</button>
-              <button type="button" class="btn btn-default">交流会のお誘い</button>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            アピール: <%= @agent.appeal %>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <h3>
+              <dl class="dl-horizontal">
+                <dt>氏名:</dt>
+                <dd><%= @agent.last_name %>&nbsp;<%= @agent.first_name %></dd>
+                <dt>ニックネーム:</dt><dd><%= @agent.nick_name %></dd>
+                <dt>生年月日:</dt><dd><%= @agent.birth_day %></dd>
+                <dt>性別:</dt><dd><%= @agent.sex %></dd>
+                <dt>年齢:</dt><dd><%#= @agent.age %></dd>
+                <dt>出身地:</dt><dd><%= @agent.home_city %></dd>
+                <dt>所在地:</dt><dd><%= @agent.location %></dd>
+                <dt>趣味:</dt><dd><%= @agent.hobby %></dd>
+                <dt>特技:</dt><dd><%= @agent.ability %></dd>
+                <dt>抱負:</dt><dd><%= @agent.ambition %></dd>
+              </dl>
+            </h3>
           </div>
         </div>
       </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">ビジネス</h3>
+      </div>
+      <div class="panel-body">
+        <% @agent.businesses.each do |business| %>
+          <div class="well">
+            会社名: <%= business.company_name %><br>
+            役職: <%= business.company_position %><br>
+            業務内容: <%= business.outline %><br>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">連絡</h3>
+      </div>
+      <div class="panel-body">
+        <div class="col-md-12">
+          <div class="btn-group-vertical">
+            <button type="button" class="btn btn-default">アポイントのお願い</button>
+            <button type="button" class="btn btn-default">質問・ご相談</button>
+            <button type="button" class="btn btn-default">ご連絡</button>
+            <button type="button" class="btn btn-default">遊び・飲み会のお誘い</button>
+            <button type="button" class="btn btn-default">交流会のお誘い</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <button type="button" class="btn btn-default">戻る</button>
     </div>
   </div>
 </div>

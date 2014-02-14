@@ -20,6 +20,7 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                           :branch => '3.0.0'
 
 gem 'therubyracer', :platforms => :ruby
+gem 'less-rails'
 gem 'twitter-bootswatch-rails'
 gem 'twitter-bootswatch-rails-fontawesome'
 gem 'twitter-bootswatch-rails-helpers'

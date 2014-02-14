@@ -208,6 +208,7 @@ DEPENDENCIES
   guard-rspec
   jbuilder (~> 1.2)
   jquery-rails
+  less-rails
   mysql2
   nested_form
   rails (= 4.0.2)
