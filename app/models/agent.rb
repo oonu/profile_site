@@ -9,4 +9,11 @@ class Agent < ActiveRecord::Base
     end
     self.save
   end
+
+  def age
+    return nil unless self.birth_day
+    d1  = self.birth_day.strftime("%Y%m%d").to_i
+    d2  = Date.today.strftime("%Y%m%d").to_i
+    return (d2 - d1) / 10000
+  end
 end
