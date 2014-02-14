@@ -16,4 +16,24 @@ class Agent < ActiveRecord::Base
     d2  = Date.today.strftime("%Y%m%d").to_i
     return (d2 - d1) / 10000
   end
+
+  def sex_readable
+    return nil unless self.sex
+    case self.sex
+    when Agent::SEX::MALE
+      return '男'
+    when Agent::SEX::FEMALE
+      return '女'
+    when Agent::SEX::OTHER
+      return 'その他'
+    end
+    return nil
+  end
+
+  class SEX
+    MALE    = 0
+    FEMALE  = 1
+    OTHER   = 2
+  end
+
 end
