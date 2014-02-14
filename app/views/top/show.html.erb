@@ -46,33 +46,46 @@
         <h3 class="panel-title">ビジネス</h3>
       </div>
       <div class="panel-body">
-        <% @agent.businesses.each do |business| %>
-          <div class="well">
-            会社名: <%= business.company_name %><br>
-            役職: <%= business.company_position %><br>
-            業務内容: <%= business.outline %><br>
-          </div>
-        <% end %>
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <tr>
+              <th>会社名</th>
+              <th>役職</th>
+              <th>業務内容</th>
+            </tr>
+            <% @agent.businesses.each do |business| %>
+              <tr class="active">
+                <td><%= business.company_name %></td>
+                <td><%= business.company_position %></td>
+                <td><%= business.outline %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
       </div>
     </div>
-    <div class="panel panel-primary">
+    <div class="panel panel-primary" style="display:none">
       <div class="panel-heading">
         <h3 class="panel-title">連絡</h3>
       </div>
       <div class="panel-body">
         <div class="col-md-12">
-          <div class="btn-group-vertical">
-            <button type="button" class="btn btn-default">アポイントのお願い</button>
-            <button type="button" class="btn btn-default">質問・ご相談</button>
-            <button type="button" class="btn btn-default">ご連絡</button>
-            <button type="button" class="btn btn-default">遊び・飲み会のお誘い</button>
-            <button type="button" class="btn btn-default">交流会のお誘い</button>
-          </div>
+          <button type="button" class="btn btn-default btn-lg btn-block">アポイントのお願い</button>
+          <button type="button" class="btn btn-default btn-lg btn-block">質問・ご相談</button>
+          <button type="button" class="btn btn-default btn-lg btn-block">ご連絡</button>
+          <button type="button" class="btn btn-default btn-lg btn-block">遊び・飲み会のお誘い</button>
+          <button type="button" class="btn btn-default btn-lg btn-block">交流会のお誘い</button>
         </div>
       </div>
     </div>
     <div class="panel panel-primary">
-      <button type="button" class="btn btn-default">戻る</button>
+      <div class="panel-body">
+        <div class="col-md-12">
+          <%= link_to top_index_path do %>
+            <button type="button" class="btn btn-default btn-block">戻る</button>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
